@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,19 +22,55 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "3177",
+      "cityName": "Marbella",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-08-23T23:21:56.000Z",
+      "notes": "Super nice!",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
+        "lat": "36.53391577198655",
+        "lng": "-4.842224121093751"
+      }
+    },
+    {
+      "id": "33b4",
+      "cityName": "Gibraltar",
+      "country": "Gibraltar",
+      "emoji": "🇬🇮",
+      "date": "2025-08-26T23:22:40.000Z",
+      "notes": "Monkeys!",
+      "position": {
+        "lat": "36.153400163891945",
+        "lng": "-5.350341796875001"
+      }
+    },
+    {
+      "id": "b0e2",
+      "cityName": "Granada",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-08-27T23:23:29.000Z",
+      "notes": "Alhambra has great views!",
+      "position": {
+        "lat": "37.18876668723711",
+        "lng": "-3.5952758789062504"
+      }
+    },
+    {
+      "id": "ab77",
+      "cityName": "Sevilla",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-08-28T23:24:03.000Z",
+      "notes": "Not that hot!",
+      "position": {
+        "lat": "37.37670527881838",
+        "lng": "-5.97381591796875"
+      }
     }
   ]
 }
