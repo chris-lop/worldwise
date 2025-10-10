@@ -1,6 +1,21 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 
 const AuthContext = createContext();
+const USER_STORAGE_KEY = "worldwise-user";
+
+// Helper functions for localStorage operations
+function getUserFromStorage() {
+  const stored = localStorage.getItem(USER_STORAGE_KEY);
+  return stored ? JSON.parse(stored) : null;
+}
+
+function saveUserToStorage(user) {
+  localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user));
+}
+
+function removeUserFromStorage() {
+  localStorage.removeItem(USER_STORAGE_KEY);
+}
 
 const initialState = { user: null, isAuthenticated: false };
 
@@ -18,7 +33,7 @@ function reducer(state, action) {
 const FAKE_USER = {
   name: "Jack",
   email: "jack@example.com",
-  password: "qwerty",
+  password: "qwerty102r857!@",
   avatar: "https://i.pravatar.cc/100?u=zz",
 };
 
@@ -27,11 +42,23 @@ function AuthProvider({ children }) {
     reducer,
     initialState
   );
+
+  // Load user from localStorage on initialization
+  useEffect(() => {
+    const storedUser = getUserFromStorage();
+    if (storedUser) {
+      dispatch({ type: "login", payload: storedUser });
+    }
+  }, []);
+
   function login(email, password) {
-    if (email === FAKE_USER.email && password === FAKE_USER.password)
+    if (email === FAKE_USER.email && password === FAKE_USER.password) {
+      saveUserToStorage(FAKE_USER);
       dispatch({ type: "login", payload: FAKE_USER });
+    }
   }
   function logout() {
+    removeUserFromStorage();
     dispatch({ type: "logout" });
   }
   return (
